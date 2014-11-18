@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -33,6 +33,7 @@ gem 'redcarpet'
 gem 'haml-rails'
 gem 'friendly_id'
 gem 'pundit'
+gem 'html2haml'
 
 
 # Use unicorn as the app server
