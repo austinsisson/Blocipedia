@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'wikis/create'
 
-  get 'wikis/destroy'
+  resources  :users, only: [:show, :update] do
+    resources :wikis
+  end
 
-  get 'wikis/edit'
-
-  get 'wikis/show'
-
-  get 'welcome/index'
-
-  get 'welcome/about'
+  get 'about' => 'weclome#about'
 
   root to: 'welcome#index'
 end

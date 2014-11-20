@@ -1,4 +1,7 @@
 class WikisController < ApplicationController
+  def index
+  end
+  
   def create
   end
 

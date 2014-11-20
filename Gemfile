@@ -35,6 +35,7 @@ gem 'haml-rails'
 gem 'friendly_id'
 gem 'pundit'
 gem 'html2haml'
+gem 'better_errors'
 
 
 # Use unicorn as the app server
