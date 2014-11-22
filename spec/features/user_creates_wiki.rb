@@ -22,7 +22,6 @@ feature 'User creates wiki', %q{
     fill_in 'Name', with: 'First wiki'
     fill_in 'Content', with: 'Very excited to create my first wiki'
     click_button 'Create wiki'
-    puts page.html
     expect(page).to have_content('First wiki')
   end
 end
