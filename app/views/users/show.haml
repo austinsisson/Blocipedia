@@ -3,3 +3,7 @@
 
 = link_to 'Add new wiki', new_user_wiki_path(current_user)
 
+- current_user.wikis.each do |wiki|
+  = wiki.name
+  = wiki.content
+

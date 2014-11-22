@@ -3,6 +3,9 @@ class WikisController < ApplicationController
   end
   
   def create
+    @wiki = current_user.wikis.build(wiki_params)
+    @wiki.save
+    redirect_to user_path(current_user)
   end
 
   def new
@@ -18,4 +21,11 @@ class WikisController < ApplicationController
 
   def show
   end
+
+  private
+
+  def wiki_params
+    params.require(:wiki).permit(:name, :content, :user_id)
+  end
+  
 end
