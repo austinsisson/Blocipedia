@@ -20,7 +20,6 @@ gem 'haml-rails'
 gem 'friendly_id'
 gem 'pundit'
 gem 'html2haml'
-gem 'better_errors'
 
 group :development do
   gem "pry-rails"

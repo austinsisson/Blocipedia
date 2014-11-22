@@ -5,6 +5,11 @@ class WikisController < ApplicationController
   def create
   end
 
+  def new
+    @wiki = current_user.wikis.build
+  end
+  
+
   def destroy
   end
 

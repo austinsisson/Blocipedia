@@ -1,3 +1,5 @@
 %h1 Welcome back, #{@user.user_name}!
 %p Which Wiki would you like to visit?
 
+= link_to 'Add new wiki', new_user_wiki_path(current_user)
+
