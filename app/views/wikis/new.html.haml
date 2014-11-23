@@ -1,0 +1,11 @@
+%h3 New wiki
+
+= form_for [current_user, @wiki] do |f|
+  %div
+    = f.label :name
+    = f.text_field :name
+  %div
+    = f.label :content
+    = f.text_field :content
+
+  = f.submit 'Create wiki'
