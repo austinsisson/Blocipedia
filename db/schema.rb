@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118031304) do
+ActiveRecord::Schema.define(version: 20141123182251) do
 
   create_table "users", force: true do |t|
     t.datetime "created_at"
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 20141118031304) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "content"
+    t.boolean  "private",    default: false
   end
 
 end

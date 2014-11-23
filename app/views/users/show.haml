@@ -1,3 +1,9 @@
 %h1 Welcome back, #{@user.user_name}!
 %p Which Wiki would you like to visit?
+%br
 
+%p Create a new Wiki:
+= form_for [@user, @user.wikis.build] do |f|
+  = f.text_field :name, placeholder: 'Name'
+  = f.check_box :private, placeholder: 'Private?'
+  = f.submit 'Save', class: 'btn btn-primary' 
