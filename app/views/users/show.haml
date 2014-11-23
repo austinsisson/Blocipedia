@@ -1,5 +1,20 @@
 %h1 Welcome back, #{@user.user_name}!
 %p Which Wiki would you like to visit?
+%table.table
+  %tr
+    %td Name
+    %td Private/Public
+  -@wikis.each do |wiki|
+    %tr
+      %td 
+        = wiki.name
+      - if wiki.private?
+        %td
+          = 'Private'
+      - else
+        %td
+          = 'Public'
+
 %br
 
 %p Create a new Wiki:
