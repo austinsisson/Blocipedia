@@ -18,6 +18,16 @@ class WikisController < ApplicationController
   end
 
   def destroy
+    @user = current_user
+    @wiki = @user.wikis.find(params[:id])
+    
+    if @wiki.destroy
+      flash[:alert] = "Wiki was deleted succesfully!"
+    else
+      flash[:error] = "An error occurred, please try again."
+    end
+    
+    redirect_to @user
   end
 
   def edit

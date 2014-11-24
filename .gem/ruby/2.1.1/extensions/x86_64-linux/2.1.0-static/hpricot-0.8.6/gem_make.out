@@ -1,0 +1,17 @@
+/home/action/.parts/packages/ruby2.1/2.1.1/bin/ruby extconf.rb 
+checking for main() in -lc... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling hpricot_css.c
+hpricot_css.rl: In function ‘hpricot_css’:
+hpricot_css.rl:87:2: warning: field precision specifier ‘.*’ expects argument of type ‘int’, but argument 3 has type ‘long int’ [-Wformat]
+hpricot_css.c:3407:9: warning: comparison between pointer and integer [enabled by default]
+compiling hpricot_scan.c
+linking shared-object hpricot_scan.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 hpricot_scan.so ./.gem.20141123-599-c36hi9
+installing default hpricot_scan libraries
