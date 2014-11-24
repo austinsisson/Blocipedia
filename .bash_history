@@ -34,3 +34,8 @@ git commit -m 'updated user show page, added destroy functionality'
 git config --global user.name "Austin"
 git config --global user.email "austinsisson@gmail.com"
 git commit -m 'updated user show page, added destroy functionality'
+git commit -m 'updated user show page, added destroy functionality'
+git add .
+git commit -m 'updated user show page, added destroy functionality'
+git checkout -b new-master
+git push origin new-master

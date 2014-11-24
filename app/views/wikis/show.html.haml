@@ -1,2 +1,8 @@
-%h1 Wikis#show
-%p Find me in app/views/wikis/show.html.erb
+%h1 Welcome to the #{@wiki.name} Wiki!
+%br
+%div.row
+  %div.col-md-8
+    = @wiki.content
+  %div.col-md-4
+    - if current_user
+      = link_to "Edit", edit_user_wiki_path, class: 'btn btn-primary'

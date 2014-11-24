@@ -1,2 +1,7 @@
 %h1 Wikis#edit
 %p Find me in app/views/wikis/edit.html.erb
+
+%div.col-md-6
+  = form_for [@user, @wiki] do |f|
+    = f.text_field :content, placeholder: 'Say something!'
+    = f.submit 'Update', class: 'btn btn-primary'
