@@ -23,6 +23,7 @@
   %p Create a new Wiki
   = form_for [@user, @user.wikis.build] do |f|
     = f.text_field :name, placeholder: 'Name'
+    = f.text_area :content, cols: 30, rows: 20, placeholder: 'Wiki Content'
     = f.check_box :private
     = f.label :Private?
     = f.submit 'Save', class: 'btn btn-primary' 

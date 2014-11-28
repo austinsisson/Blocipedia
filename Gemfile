@@ -11,7 +11,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-gem 'spring',        group: :development
+group :development do
+  gem 'spring'
+  gem 'better_errors'
+end  
 
 gem 'devise'
 gem 'stripe'
@@ -20,6 +23,5 @@ gem 'haml-rails'
 gem 'friendly_id'
 gem 'pundit'
 gem 'html2haml'
-gem 'better_errors'
-
+gem 'epic-editor-rails'
 

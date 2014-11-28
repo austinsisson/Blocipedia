@@ -2,7 +2,7 @@
 %br
 %div.row
   %div.col-md-8
-    = @wiki.content
+    = markdown @wiki.content
   %div.col-md-4
     - if current_user
       = link_to "Edit", edit_user_wiki_path, class: 'btn btn-primary'
