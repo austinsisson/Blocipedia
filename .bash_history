@@ -39,3 +39,8 @@ git add .
 git commit -m 'updated user show page, added destroy functionality'
 git checkout -b new-master
 git push origin new-master
+rails s
+git add .
+git commit -m 'added preliminary edit functionality'
+git push origin new-master
+rails s
