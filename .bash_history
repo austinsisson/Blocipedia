@@ -44,3 +44,14 @@ git add .
 git commit -m 'added preliminary edit functionality'
 git push origin new-master
 rails s
+git filter-branch --force --index-filter \ 'git rm --cached --ignore-unmatch .ssh/' \ --prune-empty --tag-name-filter cat -- --all
+git add .
+git add .
+git filter-branch --force --index-filter \ 'git rm --cached --ignore-unmatch .ssh/' \ --prune-empty --tag-name-filter cat -- --all
+git commit -m 'fixing security issue'
+git filter-branch --force --index-filter \ 'git rm --cached --ignore-unmatch .ssh/' \ --prune-empty --tag-name-filter cat -- --all
+git rm -r --cached .ssh
+git rm -r --cached .cache
+git rm -r --cached .gem
+git rm -r --cached .git
+git rm -r --cached .parts
