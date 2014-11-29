@@ -55,3 +55,29 @@ git rm -r --cached .cache
 git rm -r --cached .gem
 git rm -r --cached .git
 git rm -r --cached .parts
+git rm -r --cached .parts
+git add .
+git commit -m 'pruned github repo'
+git push origin new-master
+rails s
+bundle
+railss
+rails s
+git rm --cached .VERSION
+git rm --cached .bash-history
+git rm --cached .bash_history
+git rm --cached .bash_profile
+git rm --cached .bashrc
+git rm --cached .gemrc
+git rm --cached .nitrousboxrc_sample
+git rm --cached .nitrousboxrcmsample
+git rm --cached .nitrousboxrc.sample
+git rm --cached .rubyversion
+git rm --cached .ruby-version
+git rm --cached .pam_environment
+git rm --cached .tmux.conf
+git rm --cached .gitconfig
+git add .
+git commit -m 'updated wiki edit, added markdown rendering, incomplete markdown editor'
+git push origin new-master
+rails s

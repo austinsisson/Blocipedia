@@ -12,5 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.caret
+//= require jquery.scrollTo.min
+//= require marked
+//= require crevasse
+//= require rainbow-custom.min
 //= require turbolinks
 //= require_tree .
