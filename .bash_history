@@ -81,3 +81,8 @@ git add .
 git commit -m 'updated wiki edit, added markdown rendering, incomplete markdown editor'
 git push origin new-master
 rails s
+rails s
+rails s
+git add .
+git commit -m 'added crevase for editing markdown'
+git push origin new-master

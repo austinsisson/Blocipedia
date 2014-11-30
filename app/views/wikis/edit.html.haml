@@ -1,12 +1,11 @@
-.center-block
-  %p Edit your Wiki below. Live preview at right.
+.container
+  .col-md-6
+    %p Edit your Wiki using markdown styling below.
+    = form_for [@user, @wiki] do |f|
+      = f.text_area :content, cols: 30, rows: 20, placeholder: 'Say something!', id: 'editor'
+      = f.submit 'Update', class: 'btn btn-primary'
 
-.col-md-6
-  = form_for [@user, @wiki] do |f|
-    = f.text_field :name, placeholder: 'Name'
-    = f.text_area :content, cols: 30, rows: 20, placeholder: 'Say something!', id: 'editor'
-    = f.submit 'Update', class: 'btn btn-primary'
-
-.col-md-6
-  #markdown-preview
-    
+  .col-md-6
+    %p See it displayed live right here!
+    #markdown-preview
+      

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141123182251) do
+ActiveRecord::Schema.define(version: 20141130034102) do
 
   create_table "users", force: true do |t|
     t.datetime "created_at"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20141123182251) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "user_name"
+    t.string   "role"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

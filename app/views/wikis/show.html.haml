@@ -1,8 +1,8 @@
-%h1 Welcome to the #{@wiki.name} Wiki!
-%br
-%div.row
-  %div.col-md-8
+.container.center-block
+  %h1 Welcome to the #{@wiki.name} Wiki!
+  %br
+  .col-md-8
     = markdown @wiki.content
-  %div.col-md-4
+  .col-md-4
     - if current_user
       = link_to "Edit", edit_user_wiki_path, class: 'btn btn-primary'
