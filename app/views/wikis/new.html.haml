@@ -2,9 +2,10 @@
   %p Create a new Wiki
   = form_for @wiki do |f|
     = f.text_field :name, placeholder: 'Name'
+    - if @user.role == 'premium'
+      = f.check_box :private
+      = f.label :Private?
     = f.text_area :content, cols: 30, rows: 20, placeholder: 'Wiki Content', id: 'editor'
-    = f.check_box :private
-    = f.label :Private?
     = f.submit 'Save', class: 'btn btn-primary' 
 
 .col-md-6
