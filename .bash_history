@@ -97,3 +97,72 @@ rails s
 git add .
 git commit -m 'added pundit, updated layout, fixed turbolinks javascript bug'
 git push origin new-master
+rails c
+rails c
+rails c
+rails c
+rails s
+rails c
+rails c
+rake db:migrate
+rails g migration change_column :users, :role, :string, :default => 'standard'
+rake db:migrate
+rails c
+rails c
+rails c
+rails s
+rake routes
+rails s
+rake routes
+rails 
+rails s
+rake db:reset
+rails s
+rails c
+rails s
+rails c
+rails c
+rails s
+rake routes
+rails c
+rails s
+rake routes
+rake db:reset
+rails s
+rails c
+rails s
+rails c
+rails s
+rake routes
+rails s
+rails c
+rails s
+rails s
+rails c
+git add .
+git commit -m 'Un-nested wikis, verified pundit working properly, verified all wikis accessible'
+git push origin new-master
+bundle
+rake db:reset
+rake db:reset
+rails s
+rails c
+rails s
+rake db:reset
+rake db:reset
+rails c
+rails s
+rails c
+rails s
+git add .
+git commit -m 'added seed data via faker'
+git push origin new-master
+rails s
+rails s
+git add .
+git commit -m 'fixed broken pundit error message'
+git push origin new-master
+rails s
+git add .
+git commit -m 'updated welcome page, prepped registration page for stripe'
+git push origin new-master

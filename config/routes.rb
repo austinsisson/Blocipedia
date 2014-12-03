@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :update]
   resources :wikis
+  resources :charges, only: [:create, :new]
  
 
   get 'about' => 'weclome#about'

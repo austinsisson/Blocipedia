@@ -12,10 +12,7 @@ class WikisController < ApplicationController
   end
   
   def create
-    @user = current_user
-    @wiki = Wiki.new(wiki_params)
-    @wiki.update(user_id: @user.id)
-    @wiki.save
+    @wiki = current_user.wikis.build(wiki_params)
     authorize @wiki
     
     if @wiki.save

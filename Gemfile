@@ -26,4 +26,4 @@ gem 'friendly_id'
 gem 'pundit'
 gem 'html2haml'
 gem 'faker'
-
+gem 'figaro'
