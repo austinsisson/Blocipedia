@@ -1,5 +1,21 @@
-%h1 Welcome to Blocipedia!
-%p This is a temporary welcome page.
+.container
+  .jumbotron.text-center
+    %h1 Blocipedia!
+    %p a site that allows you to create your own wikis
 
-= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
-= link_to "Sign In", new_user_session_path, class: 'btn btn-primary'
+    = link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'
+    = link_to "Sign In", new_user_session_path, class: 'btn btn-primary'
+
+.row
+  .col-md-6.text-center
+    %img{:src => "http://www.searchenginepeople.com/wp-content/uploads/2011/12/markdown-icon.png"}    
+    %h2 Markdown Editor!
+    %p Blocipedia utilizes the #{link_to 'Crevasse library', 'https://github.com/patbenatar/crevasse'} to display a live     Markdown editor when creating or editing your wikis!
+    
+  .col-md-6.text-center
+    %br
+    %img{:src => "https://www.icontrolwp.com/wrdp/wp-content/uploads/2014/04/glossy@2x.png"}
+    %br
+    %br
+    %h2 Become a Premium Member!
+    %p Become a premium Blocipedia member and add the ability to make your wikis private. Add as many collaborators as you want, all while keeping your wiki private! Blocipedia utilizies #{link_to 'Stripe', 'https://stripe.com/'} for payment processing. Your transactions are secure!

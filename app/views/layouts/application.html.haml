@@ -9,15 +9,15 @@
     %div.container
       - if flash[:notice]
         .alert.alert-success
-          %button.close{"data-dismiss" => "alert", :type => "button"} ×
+          .button.close{"data-dismiss" => "alert", :type => "button"} ×
           = flash[:notice]
       - elsif flash[:error]
         .alert.alert-danger
-          %button.close{"data-dismiss" => "alert", :type => "button"} ×
+          .button.close{"data-dismiss" => "alert", :type => "button"} ×
           = flash[:error]
       - elsif flash[:alert]
         .alert.alert-warning
-          %button.close{"data-dismiss" => "alert", :type => "button"} ×
+          .button.close{"data-dismiss" => "alert", :type => "button"} ×
           = flash[:alert]
 
       - if current_user
