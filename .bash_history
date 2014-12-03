@@ -86,3 +86,14 @@ rails s
 git add .
 git commit -m 'added crevase for editing markdown'
 git push origin new-master
+rails g pundit:install
+rails g migration AddRoleToUsers role:string
+rake db:migrate
+rake routes
+rails s
+rails s
+bundle
+rails s
+git add .
+git commit -m 'added pundit, updated layout, fixed turbolinks javascript bug'
+git push origin new-master

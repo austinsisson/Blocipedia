@@ -11,19 +11,13 @@
     -@wikis.each do |wiki|
       %tr
         %td 
-          = link_to "#{wiki.name}", user_wiki_path(wiki.user, wiki), class: 'btn btn-info'
+          = link_to "#{wiki.name}", wiki_path(wiki), class: 'btn btn-info'
         %td
           = wiki.private ? 'Private' : 'Public'
         %td
-          = link_to "Edit", edit_user_wiki_path(wiki.user, wiki), class: 'btn btn-warning'
+          = link_to "Edit", edit_wiki_path(wiki), class: 'btn btn-warning'
         %td
-          = link_to "Delete", user_wiki_path(wiki.user, wiki), method: :delete, class: 'btn btn-danger'
+          = link_to "Delete", wiki_path(wiki), method: :delete, class: 'btn btn-danger'
             
 %div.col-md-4
-  %p Create a new Wiki
-  = form_for [@user, @user.wikis.build] do |f|
-    = f.text_field :name, placeholder: 'Name'
-    = f.text_area :content, cols: 30, rows: 20, placeholder: 'Wiki Content'
-    = f.check_box :private
-    = f.label :Private?
-    = f.submit 'Save', class: 'btn btn-primary' 
+  = link_to "New Wiki", new_wiki_path, class: 'btn btn-primary'

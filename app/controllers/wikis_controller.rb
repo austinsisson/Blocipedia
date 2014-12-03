@@ -1,13 +1,21 @@
 class WikisController < ApplicationController
   def index
     @user = current_user
-    @wikis = @user.wikis.all
+    @wikis = Wiki.all
     authorize @wikis
+  end
+  
+  def new
+    @user = current_user
+    @wiki = Wiki.new
+    authorize @wiki
   end
   
   def create
     @user = current_user
-    @wiki = @user.wikis.new(wiki_params)
+    @wiki = Wiki.new(wiki_params)
+    @wiki.update(user_id: @user.id)
+    @wiki.save
     authorize @wiki
     
     if @wiki.save
@@ -16,12 +24,12 @@ class WikisController < ApplicationController
       flash[:error] = "An error occurred, please try again."
     end
     
-    redirect_to @user
+    redirect_to @wiki
   end
 
   def destroy
     @user = current_user
-    @wiki = @user.wikis.find(params[:id])
+    @wiki = Wiki.find(params[:id])
     authorize @wiki
     
     if @wiki.destroy
@@ -35,12 +43,13 @@ class WikisController < ApplicationController
 
   def edit
     @user = current_user
-    @wiki = @user.wikis.find(params[:id])
+    @wiki = Wiki.find(params[:id])
+    authorize @wiki
   end
 
   def update
     @user = current_user
-    @wiki = @user.wikis.find(params[:id])
+    @wiki = Wiki.find(params[:id])
     authorize @wiki
     
     if @wiki.update_attributes(wiki_params)
@@ -49,17 +58,17 @@ class WikisController < ApplicationController
       flash[:error] = "An error occurred, please try again."
     end
     
-    redirect_to [@user, @wiki]
+    redirect_to @wiki
   end
   
   def show
     @user = current_user
-    @wiki = @user.wikis.find(params[:id])
+    @wiki = Wiki.find(params[:id])
   end
   
   private
   
   def wiki_params
-    params.require(:wiki).permit(:name, :content, :private)
+    params.require(:wiki).permit(:name, :content, :private, :user_id)
   end
 end
