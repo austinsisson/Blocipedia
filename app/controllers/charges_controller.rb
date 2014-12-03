@@ -12,6 +12,9 @@ class ChargesController < ApplicationController
       currency:     'usd'
       )
     
+    current_user.update(role: 'premium')
+    current_user.save
+    
     flash[:success] = "Thank you, #{current_user.user_name}"
     redirect_to user_path(current_user)
     

@@ -1,4 +1,4 @@
-%h1 Welcome back, #{@user.user_name}!
+%h1.text-center Welcome back, #{@user.user_name}!
 %br
 %div.col-md-8
   %p Which Wiki would you like to visit?
@@ -15,9 +15,22 @@
         %td
           = wiki.private ? 'Private' : 'Public'
         %td
-          = link_to "Edit", edit_wiki_path(wiki), class: 'btn btn-warning'
+          - if wiki.private?
+            .glyphicon.glyphicon-lock
+          - else
+            = link_to "Edit", edit_wiki_path(wiki), class: 'btn btn-warning'
         %td
-          = link_to "Delete", wiki_path(wiki), method: :delete, class: 'btn btn-danger'
+          - if policy(wiki).destroy?
+            = link_to "Delete", wiki_path(wiki), method: :delete, class: 'btn btn-danger'
+          - else
+            .glyphicon.glyphicon-lock
             
-%div.col-md-4
+%div.col-md-4.text-center
+  %h3 You are currently a #{@user.role} user!
+  - if @user.role == 'standard'
+    %p Consider upgrading to create private wikis!
+    = link_to "Become Premium!", new_charge_path, class: 'btn btn-primary'
+  - else
+    %p Unhappy with your premium account?
   = link_to "New Wiki", new_wiki_path, class: 'btn btn-primary'
+

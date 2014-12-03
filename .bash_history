@@ -166,3 +166,17 @@ rails s
 git add .
 git commit -m 'updated welcome page, prepped registration page for stripe'
 git push origin new-master
+rails s
+bundle
+bundle
+figaro install
+rails g controller Charges
+rake routes
+rake routes
+rake routes
+rails s
+rake routes
+rails s
+git add .
+git commit -m 'added stripe, not working yet'
+git push origin new-master
