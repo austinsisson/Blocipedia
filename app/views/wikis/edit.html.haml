@@ -2,9 +2,9 @@
   .col-md-6
     %p Edit your Wiki using markdown styling below.
     = form_for @wiki do |f|
-      - if policy(@wiki).destroy?
+      - if policy(@wiki).destroy? && @user.role == 'premium'
         = f.check_box :private
-        = f.label :Private?
+        = f.label 'Make Private'
       = f.text_area :content, cols: 30, rows: 20, placeholder: 'Say something!', id: 'editor'
       = f.submit 'Update', class: 'btn btn-primary'
 

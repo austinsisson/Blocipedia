@@ -180,3 +180,16 @@ rails s
 git add .
 git commit -m 'added stripe, not working yet'
 git push origin new-master
+rails s
+rails c
+rails s
+git add .
+git commit -m 'fixed stripe, added policy and role checks to user page'
+git push origin new-master
+rails s
+rails c
+rails s
+git add .
+git commit -m 'updated views'
+git push origin new-master
+rails s

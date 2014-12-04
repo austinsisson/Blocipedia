@@ -1,6 +1,9 @@
-= form_tag charges_path do
-  %h4 Become a Premium Member!
-  %script.stripe-button{:src => "https://checkout.stripe.com/checkout.js",
-  "data-amount" => "#{@stripe_btn_data[:amount]}",
-  "data-description" => "#{@stripe_btn_data[:description]}",
-  "data-key" => "#{@stripe_btn_data[:key]}"}  
+- if current_user.role == 'standard'
+  = form_tag charges_path do
+    %h4 Become a Premium Member!
+    %script.stripe-button{:src => "https://checkout.stripe.com/checkout.js",
+    "data-amount" => "#{@stripe_btn_data[:amount]}",
+    "data-description" => "#{@stripe_btn_data[:description]}",
+    "data-key" => "#{@stripe_btn_data[:key]}"}  
+- else
+  You're already a premium member, thank you! Honestly, you shouldn't even be seeing this page. Quit snooping around!
