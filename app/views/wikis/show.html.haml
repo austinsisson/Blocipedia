@@ -1,8 +1,27 @@
-.container.center-block
+.container.text-center
   %h1 Welcome to the #{@wiki.name} Wiki!
   %br
-  .col-md-8
+  .col-md-6
     = markdown @wiki.content
-  .col-md-4
-    - if current_user
-      = link_to "Edit", edit_wiki_path, class: 'btn btn-primary'
+  .col-md-6
+    %br
+    .row
+      %h3 Add Collaborators
+      - if current_user && policy(@wiki).destroy? && current_user.role == 'premium' || 'admin'
+        %table.table
+          %tr
+            %td User
+            %td Email
+            %td Give Access
+          - User.all.each do |user|
+            %tr
+              %td 
+                "#{user.user_name}"
+              %td 
+                "#{user.email}"
+              %td 
+                - check_box_tag 'Add'
+    .row
+      - if current_user
+        = link_to "Edit This Wiki", edit_wiki_path, class: 'btn btn-primary'
+            

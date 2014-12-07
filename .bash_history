@@ -193,3 +193,7 @@ git add .
 git commit -m 'updated views'
 git push origin new-master
 rails s
+rails s
+git add .
+git commit -m 'updated user show, restricted new charge page to standard users'
+git push origin new-master
