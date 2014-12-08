@@ -197,3 +197,20 @@ rails s
 git add .
 git commit -m 'updated user show, restricted new charge page to standard users'
 git push origin new-master
+rails g model Collaborator
+rails g migration AddIdToWikis wiki_id:integer
+rake db:migrate
+rake db:rollback STEP=1
+rake db:migrate
+rails s
+rake db:rollback STEP=1
+rake db:migrate
+rails s
+rails c
+rails s
+rails c
+rails s
+git add .
+git commit -m 'added collaborators model, HMT relation, and foundation for collabs on wiki show view'
+git push origin new-master
+rails s

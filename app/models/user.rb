@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
   
   has_many :wikis
-  has_many :collaborators, through: :wikis
+  has_many :collaborators
+  has_many :wiki_collaborations, through: :collaborators, source: :wiki
   
   def admin?
     role == 'admin'
