@@ -1,6 +1,6 @@
 .container
-  .col-md-6.text-center
-    %p Edit your Wiki using markdown styling below.
+  .col-md-6
+    %p.text-center Edit your Wiki using markdown styling below.
     = form_for @wiki do |f|
       - if policy(@wiki).destroy? && @user.role == 'premium'
         = f.check_box :private
@@ -11,6 +11,9 @@
       = f.text_area :content, id: 'editor'
 
 
-  .col-md-6.text-center
-    %p See it displayed live right here!
+  .col-md-6
+    %p.text-center See it displayed live right here!
+    %br
+    %br
+    %br
     #markdown-preview

@@ -10,18 +10,17 @@
       %td Delete
     -@wikis.each do |wiki|
       %tr
-        - if !wiki.private? || wiki.user == current_user
-          %td
-            = link_to "#{wiki.name}", wiki_path(wiki), class: 'btn btn-info'
-          %td
-            = wiki.private ? 'Private' : 'Public'
-          %td
-            = link_to "Edit", edit_wiki_path(wiki), class: 'btn btn-warning'
-          %td
-            - if policy(wiki).destroy?
-              = link_to "Delete", wiki_path(wiki), method: :delete, class: 'btn btn-danger'
-            - else
-              .glyphicon.glyphicon-lock
+        %td
+          = link_to "#{wiki.name}", wiki_path(wiki), class: 'btn btn-info'
+        %td
+          = wiki.private ? 'Private' : 'Public'
+        %td
+          = link_to "Edit", edit_wiki_path(wiki), class: 'btn btn-warning'
+        %td
+          - if policy(wiki).destroy?
+            = link_to "Delete", wiki_path(wiki), method: :delete, class: 'btn btn-danger'
+          - else
+            .glyphicon.glyphicon-lock
             
 %div.col-md-4.text-center
   -# To be replaced by CSS when I figure out how!
