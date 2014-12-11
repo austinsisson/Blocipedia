@@ -1,5 +1,9 @@
 class WikiPolicy < ApplicationPolicy
   
+  def can_add_collaborators?
+    destroy? && (@user.role == 'premium' || 'admin')
+  end
+  
   class Scope
     attr_reader :user, :scope
     

@@ -214,3 +214,24 @@ git add .
 git commit -m 'added collaborators model, HMT relation, and foundation for collabs on wiki show view'
 git push origin new-master
 rails s
+rails s
+rails c
+rails s
+rails c
+rails s
+rails s
+rails c
+rails s
+git add . 
+git commit -m 'fixed collaborator relations, added collaborator functionality'
+git push origin new-master
+git push origin new-master
+rails c
+rails s
+rails c
+rails s
+rails s
+rails s
+git add .
+git commit -m 'cleaned up policies, still working on can-add-collabs policy'
+git push origin new-master

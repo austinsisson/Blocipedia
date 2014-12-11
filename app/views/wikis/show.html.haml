@@ -5,7 +5,7 @@
     = markdown @wiki.content
   .col-md-6.text-center
     %br
-    - if @user.can_add_collaborators
+    - if policy(@wiki).can_add_collaborators?
       .row
         %h3 Add Collaborators
         = form_for @wiki do

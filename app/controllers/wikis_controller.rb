@@ -45,6 +45,7 @@ class WikisController < ApplicationController
   end
 
   def update
+    params[:user_ids] ||= []
     @user = current_user
     @wiki = Wiki.find(params[:id])
     authorize @wiki
