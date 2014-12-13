@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   resources :wikis
   resources :charges, only: [:create, :new]
  
-
+  get 'refund_request_email', to: 'users#refund_request_email', as: :refund_request_email
   get 'about' => 'weclome#about'
 
   authenticated :user do
-    root to: 'wikis#index', :as => 'authenticated_root'
+    root to: 'wikis#index', as: 'authenticated_root'
   end
   
   root to: 'welcome#index'

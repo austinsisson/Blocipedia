@@ -41,5 +41,5 @@
       = link_to "Become Premium!", new_charge_path, class: 'btn btn-primary'
     - elsif @user.role == 'premium'
       %p Unhappy with your premium account?
-      = link_to "Request a refund", 'www.google.com', class: 'btn btn-danger'
+      = link_to "Request a refund", refund_request_email_path, class: 'btn btn-danger'
 
