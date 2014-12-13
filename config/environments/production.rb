@@ -79,4 +79,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  
+  # Configure SendGrid for Heroku
+  config.action_mailer.default_url_options = { host: 'boiling-thicket-8074.herokuapp.com' }
 end

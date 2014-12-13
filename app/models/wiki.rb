@@ -3,8 +3,6 @@ class Wiki < ActiveRecord::Base
   has_many :collaborators
   has_many :users, through: :collaborators
   
-  def clear_collaborators
-    self.update(user_ids: [])
-    self.save
-  end
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 end

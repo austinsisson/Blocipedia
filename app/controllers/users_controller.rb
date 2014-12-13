@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def refund_request_email
     @user = current_user
     UserMailer.refund_request(@user).deliver
-    flash[:alert] = "Your refund request has been submitted! A member of our team will be in touch with you shortly!"
+    flash[:success] = "Your refund request has been submitted! A member of our team will be in touch with you shortly!"
     redirect_to user_path(@user)
   end
 end

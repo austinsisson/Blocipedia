@@ -9,6 +9,7 @@
       .row
         %h3 Add Collaborators
         = form_for @wiki do
+          = hidden_field_tag 'wiki[user_ids][]', []
           %table.table
             %tr
               %td User

@@ -247,3 +247,48 @@ rails c
 rails s
 rails c
 rails s
+rails s
+heroku login
+heroku create blocipedia
+heroku create blocipedia-sisson
+heroku login
+heroku create blocipedia-sisson
+git push heroku new-master
+heroku:keysadd
+heroku:keys add
+heroku keys:add
+heroku 
+heroku push new-master
+git push heroku new-master
+heroku create
+git push heroku new-master
+git push heroku new-master:master
+git push heroku new-master:master -f
+bundle
+git add .
+git commit -m 'getting it going on heroku'
+git rm -r .heroku
+git add .
+git commit -m 'fixed heroku'
+git push origin new-master
+git push heroku new-master:master
+$ heroku addons:add sendgrid:starter
+heroku addons:add sendgrid:starter
+heroku addons
+heroku addons:add sendgrid:starter
+heroku addons
+heroku config:get SENDGRID_USERNAME
+heroku config:get SENDGRID_PASSWORD
+rake secret
+rails s
+git add .
+git commit -m 'added refund request mailer'
+git push origin new-master
+git push heroku new-master:master
+heroku run rake db:migrate
+figaro heroku:set -e production
+git add .
+git commit -m 'changed mailer format'
+git push origin new-master
+git push heroku new-master:master
+heroku config

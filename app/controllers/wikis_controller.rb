@@ -26,7 +26,7 @@ class WikisController < ApplicationController
 
   def destroy
     @user = current_user
-    @wiki = Wiki.find(params[:id])
+    @wiki = Wiki.friendly.find(params[:id])
     authorize @wiki
     
     if @wiki.destroy
@@ -40,16 +40,18 @@ class WikisController < ApplicationController
 
   def edit
     @user = current_user
-    @wiki = Wiki.find(params[:id])
+    @wiki = Wiki.friendly.find(params[:id])
     authorize @wiki
   end
 
   def update
     @user = current_user
-    @wiki = Wiki.find(params[:id])
+    @wiki = Wiki.friendly.find(params[:id])
     authorize @wiki
-        
+    
+    
     if @wiki.update_attributes(wiki_params)
+      remove_collaborators
       flash[:alert] = "Wiki was updated to reflect changes."
     else
       flash[:error] = "An error occurred, please try again."
@@ -60,10 +62,14 @@ class WikisController < ApplicationController
   
   def show
     @user = current_user
-    @wiki = Wiki.find(params[:id])
+    @wiki = Wiki.friendly.find(params[:id])
   end
   
   private
+  
+  def remove_collaborators
+   @wiki.users.destroy_all if params[:wiki][:private] == '0'
+  end
   
   def wiki_params
     params.require(:wiki).permit(:name, :content, :private, :user_id, :user_ids => [])
