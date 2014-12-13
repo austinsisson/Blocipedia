@@ -3,4 +3,4 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  $('.flash').delay(1500).slideUp()
+  $('.flash').delay(5000).slideUp()
