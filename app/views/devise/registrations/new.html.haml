@@ -1,9 +1,8 @@
 .container
-  .col-md-6.text-center
+  .text-center
     %h2 Sign up
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = devise_error_messages!
-      / ERB for now, HAML coming soon!
       .field
         = f.label :user_name
         %br/
@@ -25,7 +24,3 @@
         = f.password_field :password_confirmation, autocomplete: "off"
       .actions
         = f.submit "Sign up"
-        
-  .col-md-6.text-center
-    %h2 Make your account premium!
-    

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :charges, only: [:create, :new]
  
   get 'refund_request_email', to: 'users#refund_request_email', as: :refund_request_email
-  get 'about' => 'weclome#about'
+  get 'about' => 'welcome#about'
 
   authenticated :user do
     root to: 'wikis#index', as: 'authenticated_root'
