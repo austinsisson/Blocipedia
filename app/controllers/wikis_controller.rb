@@ -45,11 +45,10 @@ class WikisController < ApplicationController
   end
 
   def update
-    params[:user_ids] ||= []
     @user = current_user
     @wiki = Wiki.find(params[:id])
     authorize @wiki
-    
+        
     if @wiki.update_attributes(wiki_params)
       flash[:alert] = "Wiki was updated to reflect changes."
     else

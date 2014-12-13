@@ -2,7 +2,7 @@
   .col-md-6
     %p.text-center Edit your Wiki using markdown styling below.
     = form_for @wiki do |f|
-      - if policy(@wiki).destroy? && @user.role == 'premium'
+      - if policy(@wiki).can_add_collaborators?
         = f.check_box :private
         = f.label 'Check for Private, Uncheck for Public'
       = f.submit 'Update', class: 'btn btn-primary'

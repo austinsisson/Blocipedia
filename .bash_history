@@ -235,3 +235,15 @@ rails s
 git add .
 git commit -m 'cleaned up policies, still working on can-add-collabs policy'
 git push origin new-master
+rails s
+git add . 
+git commit -m 'added can_add_collaborators policy'
+git push origin new-master
+rails s
+rails s
+rails c
+rails s
+rails c
+rails s
+rails c
+rails s
