@@ -2,7 +2,7 @@
   %p Create a new Wiki
   = form_for @wiki do |f|
     = f.text_field :name, placeholder: 'Name'
-    - if @user.admin? || @user.premium?
+    - if can_create_private_wiki? 
       = f.check_box :private
       = f.label :Private?
     = f.text_area :content, cols: 30, rows: 20, placeholder: 'Wiki Content', id: 'editor'

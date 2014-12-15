@@ -5,4 +5,9 @@ module ApplicationHelper
     redcarpet = Redcarpet::Markdown.new(renderer, extensions)
     (redcarpet.render text).html_safe
   end
+
+  def can_create_private_wiki?
+    current_user.admin? || current_user.premium?
+  end
+  
 end
