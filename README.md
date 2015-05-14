@@ -1,6 +1,6 @@
 Blocipedia
 -----
-A web app that allowes users to create public or private markdown-based wikis
+A web app that allows users to create public or private markdown-based wikis
 
 Free users can:
 - Create as many public wikis as they wish. All public wikis are viewable by all users!
